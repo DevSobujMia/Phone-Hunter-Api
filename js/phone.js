@@ -1,4 +1,4 @@
-const loadPhone = async (searchText, isShowAll) =>{
+const loadPhone = async (searchText='13', isShowAll) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
     const data = await res.json();
     const phones = data.data;
@@ -10,6 +10,7 @@ const displayPhones = (phones, isShowAll) =>{
     // console.log(phones);
 
     const phoneContainer = document.getElementById('phone-container');
+    // clear previus search data from phone container, before add new data
     phoneContainer.textContent = '';
 
     // display show all button if more then 12 phones
@@ -81,8 +82,8 @@ const showPhoneDetails = (phone) =>{
   <p><span>Display: </span>${phone?.mainFeatures?.displaySize}</p>
   <p><span>Sensors: </span>${phone?.mainFeatures?.sensors}</p>
   <p><span>Bluetooth: </span>${phone?.others?.Bluetooth}</p>
-  <p><span>USB: </span>${phone?.others?.USB}</p>
-  <p><span>GPS:</span>${phone.others.GPS}</p>
+  <p><span>USB: </span>${phone?.others?.USB || 'Info, Not Available'}</p>
+  <p><span>GPS: </span>${phone?.others?.GPS || 'No GPS Available'}</p>
   `
 
   // show the modal
