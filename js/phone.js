@@ -76,14 +76,15 @@ const showPhoneDetails = (phone) =>{
   const showDetailsContainer = document.getElementById('show-details-container');
 
   showDetailsContainer.innerHTML = `
-  <img src="${phone.image}" alt="" />
-  <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
-  <p><span>ChipSet: </span>${phone?.mainFeatures?.chipSet}</p>
-  <p><span>Display: </span>${phone?.mainFeatures?.displaySize}</p>
-  <p><span>Sensors: </span>${phone?.mainFeatures?.sensors}</p>
-  <p><span>Bluetooth: </span>${phone?.others?.Bluetooth}</p>
-  <p><span>USB: </span>${phone?.others?.USB || 'Info, Not Available'}</p>
-  <p><span>GPS: </span>${phone?.others?.GPS || 'No GPS Available'}</p>
+  <img class="m-4" src="${phone.image}" alt="" />
+  <p class="border-b pb-1"><span class="font-semibold">Storage: </span>${phone?.mainFeatures?.storage}</p>
+  <p class="border-b pb-1"><span class="font-semibold">ChipSet: </span>${phone?.mainFeatures?.chipSet}</p>
+  <p class="border-b pb-1"><span class="font-semibold">Display: </span>${phone?.mainFeatures?.displaySize}</p>
+  <p class="border-b pb-1"><span class="font-semibold">Sensors: </span>${phone?.mainFeatures?.sensors}</p>
+  <p class="border-b pb-1"><span class="font-semibold">Bluetooth: </span>${phone?.others?.Bluetooth}</p>
+  <p class="border-b pb-1"><span class="font-semibold">USB: </span>${phone?.others?.USB || 'Info, Not Available'}</p>
+  <p class="border-b pb-1"><span class="font-semibold">GPS: </span>${phone?.others?.GPS || 'No GPS Available'}</p>
+  <p class="border-b pb-1"><span class="font-semibold">Wifi: </span>${phone?.others?.WLAN}</p>
   `
 
   // show the modal
